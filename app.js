@@ -15,6 +15,21 @@ const lessons = [
     ]
   },
   {
+    level: 'B2',
+    label: 'Almacén',
+    title: 'Inglés para el almacén',
+    cards: [
+      ['It’s on the right', '/its on de ráit/', 'Está a la derecha', 'The packing station is on the right, beside aisle three.', 'La estación de embalaje está a la derecha, junto al pasillo tres.', 'UBICACIONES'],
+      ['It’s on the left', '/its on de left/', 'Está a la izquierda', 'The forklift is on the left, near receiving.', 'La carretilla elevadora está a la izquierda, cerca de recepción.', 'UBICACIONES'],
+      ['It’s over there', '/its óuver der/', 'Está por allá', 'The spare pallets are over there, beside the loading bay.', 'Los palés de repuesto están por allá, junto al muelle de carga.', 'UBICACIONES'],
+      ['Please bring me that box', '/plís bring mi dat box/', 'Por favor, tráeme esa caja', 'Please bring me that box before the truck leaves.', 'Por favor, tráeme esa caja antes de que se vaya el camión.', 'INSTRUCCIONES'],
+      ['Move this pallet to aisle five', '/muv dis pálet tu ail fáiv/', 'Mueve este palé al pasillo cinco', 'Could you move this pallet to aisle five?', '¿Podrías mover este palé al pasillo cinco?', 'INSTRUCCIONES'],
+      ['We’re running low on packing tape', '/wir ráning lóu on páking téip/', 'Se nos está acabando la cinta de embalaje', 'We’re running low on packing tape; check the supply cabinet.', 'Se nos está acabando la cinta de embalaje; revisa el armario de suministros.', 'SUMINISTROS'],
+      ['Check the quantity against the packing slip', '/chek de kuántiti agénst de páking slip/', 'Compara la cantidad con el albarán', 'Please check the quantity against the packing slip before signing.', 'Por favor, compara la cantidad con el albarán antes de firmar.', 'CONTROL DE PEDIDOS'],
+      ['Put the fragile items on the top shelf', '/put de fráyil áitems on de top shelf/', 'Pon los artículos frágiles en el estante superior', 'Put the fragile items on the top shelf so they stay safe.', 'Pon los artículos frágiles en el estante superior para que estén seguros.', 'SEGURIDAD']
+    ]
+  },
+  {
     level: 'B1',
     label: 'Conversación natural',
     title: 'Habla con más naturalidad',
@@ -64,6 +79,12 @@ const lessons = [
 let currentLesson = 0;
 let currentCard = 0;
 let known = JSON.parse(localStorage.getItem('littleStepsKnown') || '[]');
+const progressVersion = 'warehouse-lesson-2';
+if (localStorage.getItem('littleStepsDeckVersion') !== progressVersion) {
+  known = [...new Set(known.filter(Number.isInteger).map(index => index >= 8 ? index + 8 : index))];
+  localStorage.setItem('littleStepsKnown', JSON.stringify(known));
+  localStorage.setItem('littleStepsDeckVersion', progressVersion);
+}
 let revealed = false;
 const $ = id => document.getElementById(id);
 
