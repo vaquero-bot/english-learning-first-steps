@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fff8f5" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>Little Steps · English</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar"><div class="brand"><span class="brand-mark">✦</span><span>Little Steps</span></div><button class="icon-button" id="resetBtn" aria-label="Reiniciar progreso">↻</button></header>
+    <section class="hero"><p class="eyebrow">INGLÉS, PASO A PASO</p><h1>Hola, <span>bonita.</span></h1><p class="intro">Un ratito para aprender inglés con calma. Escucha, repite y celebra cada pequeño avance.</p></section>
+    <section class="progress-card" aria-label="Progreso de la lección"><div class="progress-copy"><span>Lección 1 · Lo esencial</span><strong id="progressLabel">0 / 8 aprendidas</strong></div><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div></section>
+    <section class="lesson-head"><div><p class="eyebrow">TARJETA <span id="cardNumber">1</span> DE 8</p><h2>Saludos y frases útiles</h2></div><span class="lesson-badge">A1</span></section>
+    <section class="flashcard" id="flashcard" tabindex="0" aria-label="Tarjeta de vocabulario; toca para revelar la traducción"><div class="card-top"><span class="category">SALUDOS</span><button class="sound-button" id="soundBtn" aria-label="Escuchar pronunciación">◖</button></div><div class="card-center"><p class="word" id="word">Hello</p><p class="pronunciation" id="pronunciation">/he·lóu/</p><div class="reveal-hint" id="revealHint"><span>toca para ver la traducción</span><span class="hand">⌁</span></div><p class="translation hidden" id="translation">Hola</p></div><div class="card-bottom"><span id="exampleLabel">Ejemplo</span><p id="example">Hello, how are you?</p><p class="example-translation" id="exampleTranslation">Hola, ¿cómo estás?</p></div></section>
+    <div class="actions"><button class="secondary-button" id="againBtn">Repasar</button><button class="primary-button" id="knowBtn">Lo sé <span>→</span></button></div>
+    <p class="tip"><span>♡</span> Consejo: di la frase en voz alta. Tu acento no tiene que ser perfecto.</p>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
